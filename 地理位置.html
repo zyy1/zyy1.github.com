@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>地理位置</title>
+    <script>
+        if(navigator.geolocation){
+            //判断浏览器是否支持     地理信息必须在服务器环境下
+
+            //获取一次位置信息
+            navigator.geolocation.getCurrentPosition(function(ev){
+
+                var msg=ev.coords;
+                alert(msg.longitude);
+                alert(msg.latitude);
+
+
+            },function(){
+                alert('失败');
+            });
+
+            //实时获取地理位置
+
+            navigator.geolocation.watchPosition(function(ev){
+                var msg=ev.coords;
+                for(var name in msg){
+                    document.write(name+':'+msg[name]+'<br>');
+                }
+
+            },function(){
+                alert('失败');
+            });
+
+
+        } else{
+            alert('不支持');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
