@@ -1,0 +1,6 @@
+html,body{ height: 500%;  width:100%; overflow: hidden;}
+section{height:700px;}
+.load{ height:100%; display: flex;  align-items: center;  justify-content: center;  background: rgb(62,197,179);}
+
+
+
